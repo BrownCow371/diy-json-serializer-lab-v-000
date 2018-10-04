@@ -10,22 +10,15 @@
 <script type="text/javascript" charset="utf-8">
   $(function(){
     $(".js-next").on("click", function(){
-      // let nextID = parseInt($(this).data("id"))+1
       let nextId = parseInt($(".js-next").attr("data-id")) + 1;
-      console.log(nextId)
       $.get("/products/" + nextId + "/data", function(data){
-        console.log(data["id"])
-
         $(".prodID").text(data["id"]);
-
         $(".productName").text(data["name"]);
         $(".prodInventory").text(data["inventory"]);
         $(".prodPrice").text(data["price"]);
         $(".productDescription").text(data["description"]);
         $(".js-next").attr("data-id", data["id"]);
-          // debugger
       });
     });
   });
-  // debugger
 </script>
