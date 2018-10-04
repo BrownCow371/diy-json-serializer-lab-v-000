@@ -1,14 +1,12 @@
 <a href="#" class="js-next" data-id="<%=@product.id%>">Next Product</a>
 <h1 class ="productName"><%=@product.name%></h1>
-
-
-<p class ="prodID"><%=@product.id%></p>
-<strong>Inventory: </strong><p class="prodInventory"><%=@product.inventory%></p><br>
-<strong>Price: </strong><p class="prodPrice"> <%=@product.price%></p>
+<p class="prodInventory"><%=@product.inventory%></p>
+<p class="prodPrice"> <%=@product.price%></p>
 <p class="productDescription"><%=@product.description%></p>
+<p class ="prodID"><%=@product.id%></p>
 
 <script type="text/javascript" charset="utf-8">
-  $(function(){
+  $(function () {
     $(".js-next").on("click", function(){
       let nextId = parseInt($(".js-next").attr("data-id")) + 1;
       $.get("/products/" + nextId + "/data", function(data){
