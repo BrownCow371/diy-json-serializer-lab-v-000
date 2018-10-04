@@ -1,23 +1,14 @@
-<<<<<<< HEAD
 <h1 class ="prodName"><%=@product.name%></h1>
-<a href="#" class="js-next" data-id="<%=@product.id%>">Next Product</a><br>
+<a href="#" class="js-next" data-id="<%=@product.id%>">Next Product</a>
+<br>
 
 <p class ="prodID"><%=@product.id%></p>
 <strong>Inventory: </strong><p class="prodInventory"><%=@product.inventory%></p><br>
 <strong>Price: </strong><p class="prodPrice"> <%=@product.price%></p>
-=======
-<h1 class ="productName"><%=@product.name%></h1>
-<a class="js-next" href="#" data-id="<%=@product.id%>">Next Product</a><br>
-
-<p class ="prodID"><%=@product.id%></p>
-<strong>Inventory: </strong><span class="prodInventory"><%=@product.inventory%></span><br>
-<strong>Price: </strong><span class="prodPrice"> <%=@product.price%></span>
->>>>>>> ac150eb80ef6bcb6463bba06f84abde4a1df7d22
 <p class="prodDesc"><%=@product.description%></p>
 
 <script type="text/javascript" charset="utf-8">
   $(function(){
-<<<<<<< HEAD
     $(".js-next").on("click", function(){
       // let nextID = parseInt($(this).data("id"))+1
       let nextId = parseInt($(".js-next").attr("data-id")) + 1;
@@ -28,30 +19,13 @@
         $(".prodID").text(data["id"]);
 
         $(".prodName").text(data["name"]);
-=======
-    $(".js-next").on('click', function(){
-      // let nextID = parseInt($(this).data("id"))+1
-      let nextID = parseInt($(".js-next").attr("data-id")) + 1;
-      console.log(nextID)
-      $.get("/products/" + nextID + "/data", function(data){
-        $(".prodID").text(data["id"]);
-        $(".productName").text(data["name"]);
->>>>>>> ac150eb80ef6bcb6463bba06f84abde4a1df7d22
         $(".prodInventory").text(data["inventory"]);
         $(".prodPrice").text(data["price"]);
         $(".prodDesc").text(data["description"]);
         $(".js-next").attr("data-id", data["id"]);
-<<<<<<< HEAD
           // debugger
       });
     });
   });
   // debugger
-=======
-
-      });
-    });
-  });
-
->>>>>>> ac150eb80ef6bcb6463bba06f84abde4a1df7d22
 </script>
