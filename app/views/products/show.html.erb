@@ -5,7 +5,7 @@
 <p class ="prodID"><%=@product.id%></p>
 <strong>Inventory: </strong><p class="prodInventory"><%=@product.inventory%></p><br>
 <strong>Price: </strong><p class="prodPrice"> <%=@product.price%></p>
-<p class="prodDesc"><%=@product.description%></p>
+<p class="productDescription"><%=@product.description%></p>
 
 <script type="text/javascript" charset="utf-8">
   $(function(){
@@ -21,7 +21,7 @@
         $(".productName").text(data["name"]);
         $(".prodInventory").text(data["inventory"]);
         $(".prodPrice").text(data["price"]);
-        $(".prodDesc").text(data["description"]);
+        $(".productDescription").text(data["description"]);
         $(".js-next").attr("data-id", data["id"]);
           // debugger
       });
